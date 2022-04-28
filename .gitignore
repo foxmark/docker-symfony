@@ -1,0 +1,5 @@
+.idea/*
+docker/mysql/data/*
+!docker/mysql/data/.gitkeep
+api/*
+!api/.gitkeep
