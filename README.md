@@ -1,4 +1,4 @@
-# symfony-cli
+# docker-symfony
 
 # TO DO:
 
@@ -9,12 +9,18 @@
 
 `docker-compose up`
 
-`docker exec APP_NAME-php81-container bin/console doctrine:database:create`
+`docker exec -it [APP_NAME]-php81-container symfony new --no-git --demo .`
 
-`docker exec APP_NAME-php81-container bin/console doctrine:migrations:migrate`
+or
+
+`docker exec -it [APP_NAME]-php81-container symfony new --no-git --version="5.4.8" .`
+
+`docker exec [APP_NAME]-php81-container bin/console doctrine:database:create`
+
+`docker exec [APP_NAME]-php81-container bin/console doctrine:migrations:migrate`
 
 **Optionally on Dev** To populate user table:
 
-`docker exec APP_NAME-php81-container bin/console doctrine:fixtures:load`
+`docker exec [APP_NAME]-php81-container bin/console doctrine:fixtures:load`
 
 This will create test users all with the same password: `password`
